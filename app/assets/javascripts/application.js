@@ -10,6 +10,11 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+// CHANGE BOOTSTRAP-SOCKETS TO BOOTSTRAP WHEN PAST DEBUGGING
+//
 //= require rails-ujs
 //= require turbolinks
+//= require jquery3
+//= require popper
+//= require bootstrap-sprockets
 //= require_tree .

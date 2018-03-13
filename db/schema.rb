@@ -10,9 +10,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20180313133018) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "individuals", force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
+    t.string "email"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "organization_id"
+    t.index ["organization_id"], name: "index_individuals_on_organization_id"
+  end
+
+  create_table "organizations", force: :cascade do |t|
+    t.string "name"
+    t.string "email"
+    t.string "state"
+    t.string "city"
+    t.string "address"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_foreign_key "individuals", "organizations"
 end
